@@ -62,30 +62,16 @@
 
   <main>
   <br><br><br>
-  <h3 class="bg-secondary-subtle" style="white-space: pre-line">hi &#10; hi</h3>
-
   <?php
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      // Открываем файл для добавления данных
       $messages = fopen("messages.txt", "a");
-
-      // Получаем значение поля "text" из POST-запроса
       $text = $_POST["text"];
-
-      // Записываем значение в файл
       fwrite($messages, " &#10;User: $text");
-
-      // Закрываем файл
       fclose($messages);
-
-      // Выводим данные POST-запроса
       echo "Received POST data: $text";
   } else {
-      // Если это не POST-запрос, выводим стандартный текст
-
-      // Читаем содержимое файла и выводим его
       $content = file_get_contents("messages.txt");
-      echo "<h3 id='content' style='white-space: pre-line'>$content</h3>";
+      echo "<h3 id='content' style='white-space: pre-line' class='bg-secondary-subtle'>$content</h3>";
   }
   ?>
 
