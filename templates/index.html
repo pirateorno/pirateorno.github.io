@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <main>
+    <section class="cover-section d-flex align-items-center justify-content-center vh-100 text-center inner cover bg-dark bg-gradient">
+      <div class="container text-white">
+          <h1 class="display-4">Добро пожаловать на сайт Ya_Sanya__</h1>
+          <p class="lead">Тут вы можете найти мои проекты и всякое другое.</p>
+          <a href="#aboutme" class="btn btn-success btn-lg">Про меня</a>
+      </div>
+    </section>
+    
+    <br id="aboutme">
+    <br>
+    <div class="container-fluid mt-5">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <h2 class="font-weight-bold">Привет, меня зовут Саша!</h2>
+              <p class="lead">Мне ?? лет, и я занимаюсь программированием. Знаю такие языки: Python, Lua и C#. Еще я умею делать ботов для телеграма на python и умею создавать сервера для майнкрафта. Здесь вы найдете информацию о моих проектах и моих социальных сетей.</p>
+              <p class="lead">Ниже вы можете посмотреть где я есть:</p>
+          </div>
+      </div>
+  
+      <div class="row mt-4">
+          <div class="col-md-6 offset-md-3 text-center">
+              <p class="lead">
+                  <a href="https://github.com/pirateorno" class="btn btn-secondary btn-lg"> <i class="fab fa-github"></i> Мой github</a>
+                  <a href="https://t.me/YaSanyaTwitch" class="btn btn-primary btn-lg"> <i class="fab fa-telegram"></i> Мой телеграм канал</a>
+                  <a href="https://t.me/Sasha283" class="btn btn-primary btn-lg"> <i class="fab fa-telegram"></i> Мой телеграм</a>
+              </p>
+          </div>
+      </div>
+  </div>
+  
+  <br><br><br><br><br><br><br><br><br>
+
+
+  <div class="container-fluid bg-black text-center" id="projects">
+    <br>
+    <h1>Мои проекты:</h1>
+    <br>
+    
+    <div class="row mx-auto" style="max-width: 75%;">
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="bg-dark border rounded mb-3" style="min-height: 110%; display: flex; flex-direction: column; align-items: center;">
+          <h2>screen-camera-capture</h2>
+          <img src="{{url_for('static', filename='black.png')}}" alt="test" style="max-width: 100%; height: auto; align-self: center;">
+          <br>
+          <h3>Программа для слежки за вашим другом (ну или не другом)</h3>
+          <br>
+          <button class="btn btn-primary mt-auto" onclick="location.href='https://github.com/pirateorno/screen-camera-capture'">Ссылка на проект</button>
+          <br>
+        </div>
+      </div>
+      
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="bg-dark border rounded mb-3" style="min-height: 110%; display: flex; flex-direction: column; align-items: center;">
+          <h2>Loloitems</h2>
+          <img src="{{url_for('static', filename='black.png')}}" alt="test" style="max-width: 100%; height: auto; align-self: center;">
+          <br>
+          <h3>Мод на forge 1.16.5 для майнкрафт. Добавляет предметы из сериала "Голос времени"</h3>
+          <br>
+          <button class="btn btn-primary mt-auto" onclick="location.href='https://github.com/pirateorno/loloitems'">Ссылка на проект</button>
+          <br>
+        </div>
+      </div>
+      
+      <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="bg-dark border rounded mb-3" style="min-height: 110%; display: flex; flex-direction: column; align-items: center;">
+          <h2>Tds on unity</h2>
+          <img src="{{url_for('static', filename='black.png')}}" alt="test" style="max-width: 100%; height: auto; align-self: center;">
+          <br>
+          <h3>Мой первый проект на юнити. Игра жанром тавер дефенс. Сделано для финального проекта на курсах</h3>
+          <br>
+          <button class="btn btn-primary mt-auto" onclick="location.href='https://github.com/pirateorno/Tds'">Ссылка на проект</button>
+          <br>
+        </div>
+      </div>  
+    </div>
+    <pre>
+       
+       
+       
+    </pre>
+  </div>
+
+
+  
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <h1 class="text-center">Что-то пустовато, да?</h1>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+  
+
+  </main>
+
+{% endblock %}

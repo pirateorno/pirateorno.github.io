@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Ya_sanya__ | chat
+{% endblock %}
+
+{% block content %}
+
+  <main>
+  
+  <br><br><br>
+  <div class="container-fluid bg-secondary-subtle text-center">
+    <div>
+    <h1 class="display-4 mb-4">Как писать в чат?</h1>
+    <p class="lead mb-4">Для этого вам нужно сделать POST-запрос на эту страницу и указать два параметра: <code>user</code> и <code>text</code>.</p>
+    <p class="mb-4">Вот пример кода на Python:</p>
+    <img src="../img/chatcode.png" alt="Code" style="width: 35%;">
+    <p class="mb-4">Чтобы скопировать код, нажмите кнопку ниже.</p>
+    <button class="btn btn-primary" onclick="copyCode()">Скопировать код</button>
+    <script>
+      function copyCode() {
+        const textToCopy = `
+import requests
+
+url = "http://c7.play2go.cloud:20015/projects/chat.php"
+text = "hello"
+user = "Ya_Sanya__"
+
+response = requests.post(url, data={"text": text, "user": user})
+  `;
+
+        const textarea = document.createElement("textarea");
+        textarea.value = textToCopy;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+        alert("Код скопирован в буфер обмена!");
+      }
+    </script>
+    </div>
+    <br>
+    <div>
+      <h1 class="display-4 mb-4">Немного инфы:</h1>
+      <p class="lead mb-4">1. История автоматически удаляются при достижении 500 сообщений.</p>
+      <p class="lead mb-4">2. Текст проверяется на ссылки и удаляет их.</p>
+    </div>
+    <br>
+  </div>
+  <br><br><br>
+
+  <div style='white-space: pre-line; overflow-wrap: break-word;' class='bg-secondary-subtle'>
+    <h1>Чат:</h1>
+    {% if request.method == 'POST' %}
+        <h3>Banned term detected. Message not sent.</h3>
+    {% else %}
+        <h3 id='content'>{{ content }}</h3>
+    {% endif %}
+
+
+  
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </main>
+
+
+{% endblock %}
